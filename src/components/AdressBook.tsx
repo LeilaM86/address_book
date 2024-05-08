@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SearchBox from "./SearchBox";
+import SearchBox from "./common/SearchBox";
 import UserCard from "./UserCard";
 
 interface User {
