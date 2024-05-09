@@ -7,7 +7,10 @@ interface Props {
 
 function UserCard({ user }: Props) {
   return (
-    <li key={user.email} className="mb-4 p-4 border rounded flex items-center">
+    <li
+      key={user.email}
+      className="mb-4 p-4 border rounded flex items-center shadow shadow-secondary"
+    >
       <Link
         to={`/user/${encodeURIComponent(user.email)}`}
         className="flex items-center"
@@ -15,7 +18,7 @@ function UserCard({ user }: Props) {
         <img
           src={user.picture.medium}
           alt={`${user.name.first} ${user.name.last}'s portrait`}
-          className="rounded-full w-16 h-16 mr-4"
+          className="w-16 rounded-full ring ring-primary ring-offset-secondary ring-offset-1 mr-3"
         />
         <div>
           <div>

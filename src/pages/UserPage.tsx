@@ -49,9 +49,9 @@ function UserPage() {
       <img
         src={user.picture.large}
         alt={`${user.name.first} ${user.name.last}'s portrait`}
-        className="rounded-full w-48 h-48 mb-4"
+        className="w-48 rounded-full ring ring-primary ring-offset-secondary ring-offset-2 mb-3"
       />
-      <h1 className="text-xl font-bold mb-4">
+      <h1 className="text-xl font-bold mb-3">
         {user.name.first} {user.name.last}
       </h1>
 
@@ -73,3 +73,4 @@ function UserPage() {
 }
 
 export default UserPage;
+// "rounded-full w-48 h-48 mb-4"
