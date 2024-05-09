@@ -1,33 +1,20 @@
 import { useState, useEffect } from "react";
 import SearchBox from "./common/SearchBox";
 import UserCard from "./UserCard";
-
-interface User {
-  login: {
-    uuid: string;
-  };
-  name: {
-    first: string;
-    last: string;
-  };
-  email: string;
-  location: {
-    city: string;
-    country: string;
-  };
-  phone: string;
-  picture: {
-    medium: string;
-  };
-}
+import "@fortawesome/fontawesome-free/css/all.css";
+import { User } from "../types";
+// import Pagination from "./common/Pagination";
 
 function AddressBook() {
   const [users, setUsers] = useState<User[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchOption, setSearchOption] = useState("firstName");
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const resultsPerPage = 10;
+  // const seed = "abc";
 
   useEffect(() => {
-    fetch("https://randomuser.me/api/?seed=foobar&results=100")
+    fetch("https://randomuser.me/api/?seed=foobar&results=50")
       .then((response) => response.json())
       .then((data) => {
         setUsers(data.results);
@@ -53,9 +40,30 @@ function AddressBook() {
     return false;
   });
 
+  // const fetchUsers = async (page: number) => {
+  //   try {
+  //     const response = await fetch(
+  //       `https://randomuser.me/api/?page=${page}&results=${resultsPerPage}&seed=${seed}`
+  //     );
+  //     const data = await response.json();
+  //     setUsers(data.results);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchUsers(currentPage);
+  // }, [currentPage]);
+
+  // const totalCount = 100;
+
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4 m-4">Address Book</h1>
+      <div className="flex items-center">
+        <i className="fa-solid fa-address-book text-2xl"></i>
+        <h1 className="text-2xl font-bold mb-4 m-4">Address Book</h1>
+      </div>
       <div className="mb-4">
         <SearchBox value={searchQuery} onChange={setSearchQuery} />
         <select
@@ -73,6 +81,14 @@ function AddressBook() {
           <UserCard key={user.email} user={user} />
         ))}
       </ul>
+      {/* <div>
+        <Pagination
+          totalCount={totalCount}
+          pageSize={resultsPerPage}
+          selectedPage={currentPage}
+          onPageSelect={setCurrentPage}
+        />
+      </div> */}
     </div>
   );
 }
