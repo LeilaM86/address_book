@@ -14,6 +14,7 @@ export interface User {
     country: string;
   };
   phone: string;
+  cell: string;
   picture: {
     medium: string;
     large: string;

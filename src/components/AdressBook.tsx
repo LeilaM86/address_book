@@ -62,7 +62,7 @@ function AddressBook() {
     <div className="container mx-auto p-4">
       <div className="flex items-center">
         <i className="fa-solid fa-address-book text-2xl"></i>
-        <h1 className="text-2xl font-bold mb-4 m-4">Address Book</h1>
+        <h1 className="text-2xl font-semibold mb-4 m-4">Address Book</h1>
       </div>
       <div className="mb-4">
         <SearchBox value={searchQuery} onChange={setSearchQuery} />

@@ -51,8 +51,6 @@ function UserPage() {
         alt={`${user.name.first} ${user.name.last}'s portrait`}
         className="rounded-full w-48 h-48 mb-4"
       />
-
-      <i className="fa-solid fa-user text-2xl"></i>
       <h1 className="text-xl font-bold mb-4">
         {user.name.first} {user.name.last}
       </h1>
@@ -62,6 +60,9 @@ function UserPage() {
       </div>
       <div>
         <strong>Phone:</strong> {user.phone}
+      </div>
+      <div>
+        <strong>Cell:</strong> {user.cell}
       </div>
       <div>
         <strong>Location:</strong> {user.location.state}, {user.location.city},

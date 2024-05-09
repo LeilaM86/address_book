@@ -7,10 +7,7 @@ interface Props {
 
 function UserCard({ user }: Props) {
   return (
-    <li
-      key={user.email}
-      className="mb-4 p-4 border rounded shadow flex items-center"
-    >
+    <li key={user.email} className="mb-4 p-4 border rounded flex items-center">
       <Link
         to={`/user/${encodeURIComponent(user.email)}`}
         className="flex items-center"
